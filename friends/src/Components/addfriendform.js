@@ -7,10 +7,12 @@ import FriendsList from "./friendslist"
 
 const AddFriendForm = ({errors, touched, status}) => {
     const [friend, setFriend] = useState([]);
+    const [newFriend, setNewFriend] = useState({})
+    console.log(newFriend)
 
-    // useEffect(() => {
-    //     setFriend(...friend, status)
-    // }, [setFriend, status])
+    useEffect(() => {
+        setNewFriend(status)
+    }, [setNewFriend, status])
 
     return (
         <div>
@@ -23,7 +25,7 @@ const AddFriendForm = ({errors, touched, status}) => {
         <Field type = "email" name = "email" placeholder = "Email" />
         {touched.email && errors.email && <p>{errors.email}</p>}
         <button type="submit">Add Friend</button>
-        <FriendsList friend = {friend} setFriend = {setFriend} />
+        <FriendsList friend = {friend} setFriend = {setFriend} newFriend = {newFriend} />
         </Form>
         </div>
     )

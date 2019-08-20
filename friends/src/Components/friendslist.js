@@ -3,7 +3,7 @@ import FriendsCard from "./friendsCards";
 import { axiosWithAuth } from "../Utils/axiosWithAuth.js"
 
 
-const FriendList = ({friend, setFriend}) => {
+const FriendList = ({friend, setFriend, newFriend}) => {
 
     useEffect(() => {
         axiosWithAuth()
@@ -13,7 +13,7 @@ const FriendList = ({friend, setFriend}) => {
                 setFriend(res.data)
             })
             .catch(error => console.log(error))
-    }, [setFriend])
+    }, [newFriend])
 
 
 
